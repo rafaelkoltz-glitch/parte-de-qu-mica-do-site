@@ -1,5 +1,6 @@
 export type Etapa = {
   numero: number
+  slug: string
   titulo: string
   imagem: string
   alt: string
@@ -10,6 +11,7 @@ export type Etapa = {
 export const etapas: Etapa[] = [
   {
     numero: 1,
+    slug: "captacao-e-aducao",
     titulo: "Captação e Adução de água",
     imagem: "/images/etapa-1-captacao.png",
     alt: "Rio natural entre montanhas, fonte de captação de água",
@@ -18,6 +20,7 @@ export const etapas: Etapa[] = [
   },
   {
     numero: 2,
+    slug: "pre-tratamento",
     titulo: "Pré-Tratamento da água",
     imagem: "/images/etapa-2-pretratamento.png",
     alt: "Tanques industriais de pré-tratamento de água",
@@ -26,6 +29,7 @@ export const etapas: Etapa[] = [
   },
   {
     numero: 3,
+    slug: "coagulacao",
     titulo: "Coagulação da água",
     imagem: "/images/etapa-3-coagulacao.png",
     alt: "Tanque circular azul de coagulação de água",
@@ -34,6 +38,7 @@ export const etapas: Etapa[] = [
   },
   {
     numero: 4,
+    slug: "floculacao",
     titulo: "Floculação da água",
     imagem: "/images/etapa-4-floculacao.png",
     alt: "Ilustração de tanque de floculação com misturador",
@@ -42,6 +47,7 @@ export const etapas: Etapa[] = [
   },
   {
     numero: 5,
+    slug: "decantacao",
     titulo: "Decantação (ou flotação)",
     imagem: "/images/etapa-5-decantacao.png",
     alt: "Frascos de laboratório mostrando decantação da água",
@@ -50,6 +56,7 @@ export const etapas: Etapa[] = [
   },
   {
     numero: 6,
+    slug: "filtracao",
     titulo: "Filtração da água",
     imagem: "/images/etapa-6-filtracao.png",
     alt: "Diagrama de filtração da água com camadas de meio filtrante",
@@ -58,6 +65,7 @@ export const etapas: Etapa[] = [
   },
   {
     numero: 7,
+    slug: "desinfeccao",
     titulo: "Desinfecção da água",
     imagem: "/images/etapa-7-desinfeccao.png",
     alt: "Piscinas de tratamento com tubulações azuis",
@@ -66,6 +74,7 @@ export const etapas: Etapa[] = [
   },
   {
     numero: 8,
+    slug: "correcao-ph-e-fluoretacao",
     titulo: "Correção de PH e Fluoretação",
     imagem: "/images/etapa-8-ph.png",
     alt: "Mãos com luvas segurando amostra de água em laboratório",
@@ -75,6 +84,7 @@ export const etapas: Etapa[] = [
   },
   {
     numero: 9,
+    slug: "reservacao-e-distribuicao",
     titulo: "Reservação e Distribuição",
     imagem: "/images/etapa-9-reservacao.png",
     alt: "Grande reservatório cilíndrico de água contra o céu",
@@ -82,3 +92,7 @@ export const etapas: Etapa[] = [
       "A água já tratada e potável é armazenada em grandes reservatórios e, então, distribuída pela rede de tubulações até chegar às torneiras das casas, escolas e empresas.",
   },
 ]
+
+export function getEtapaBySlug(slug: string): Etapa | undefined {
+  return etapas.find((etapa) => etapa.slug === slug)
+}
