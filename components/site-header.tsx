@@ -8,8 +8,8 @@ const disciplinas = [
 export function SiteHeader() {
   return (
     <header className="bg-teal text-teal-foreground">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-4">
-        <div className="flex items-center gap-3">
+      <div className="mx-auto flex max-w-5xl flex-col gap-4 px-4 pt-4 sm:flex-row sm:items-start sm:justify-between">
+        <div className="flex items-center gap-3 pb-4">
           <GraduationCap className="size-9 shrink-0" aria-hidden="true" />
           <p className="font-heading text-sm font-bold leading-tight">
             IFA - Itinerário
@@ -20,19 +20,22 @@ export function SiteHeader() {
           </p>
         </div>
 
-        <nav aria-label="Disciplinas" className="flex items-end gap-1 self-end">
+        <nav
+          aria-label="Disciplinas"
+          className="flex items-end gap-1 self-stretch sm:self-end"
+        >
           {disciplinas.map((d) => (
             <a
               key={d.nome}
               href="#"
-              className={`font-heading rounded-t-md px-3 py-2 text-lg font-bold ${d.cor} transition-opacity hover:opacity-80`}
+              className={`font-heading rounded-t-lg px-4 py-2 text-lg font-bold ${d.cor} transition-opacity hover:opacity-80`}
             >
               {d.nome}
             </a>
           ))}
           <span
             aria-current="page"
-            className="font-heading rounded-t-lg bg-background px-4 py-2 text-lg font-bold text-heading shadow-sm"
+            className="font-heading -mb-px rounded-t-lg bg-background px-5 py-3 text-lg font-bold text-heading shadow-sm"
           >
             Química
           </span>
